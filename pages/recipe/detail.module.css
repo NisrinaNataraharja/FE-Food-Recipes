@@ -1,0 +1,20 @@
+
+.detail {
+    margin-top: 50px;
+    max-width: 1000px;
+  }
+  
+  .detail img {
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+.title {
+    max-width: 400px;
+    margin-left: 22px;
+    color: #2E266F;
+}

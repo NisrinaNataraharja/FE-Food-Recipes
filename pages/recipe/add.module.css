@@ -1,0 +1,24 @@
+
+.add {
+    margin: 0 auto;
+    margin-top: 50px;
+    max-width: 800px;
+  }
+  
+ .photo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 300px;
+    cursor: pointer;
+  }
+  
+  .add input, .add textarea, .add .photo {
+    background-color: #EFEFEF;
+    border: none;
+  }
+  
+  .add form button {
+    max-width: 300px;
+  }
