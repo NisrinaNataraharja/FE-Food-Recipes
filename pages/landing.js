@@ -1,31 +1,27 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from '../styles/landing.module.css'
 import RecipeCard from '../components/base/recipeCard/RecipeCard'
 import { Navbar } from '../components/index'
 import axios from 'axios'
-
-
-
+import { useRouter } from 'next/router'
 
 const Landing = () => {
     const [recipes, setRecipes] = useState([])
+    const router = useRouter()
     useEffect(() => {
-      axios
-      .get(`${process.env.NEXT_APP_URL_API}recipe`)
-      .then((res)=>{
-        // console.log(res.data.data[0]);
-        setRecipes(res.data.data);
-      })
-      .catch((err)=> {
-        console.log(err);
-      }) 
+        axios
+            .get(`${process.env.NEXT_APP_URL_API}recipe`)
+            .then((res) => {
+                // console.log(res.data.data[0]);
+                setRecipes(res.data.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
     }, [])
-    
-
-
     return (
         <>
-        <Navbar/>
+            <Navbar />
             <div className="container-fluid">
                 <section className={`${styles.landingone} row`}>
                     <div className="col-10 col-sm-9 d-flex flex-column justify-content-center">
@@ -41,7 +37,7 @@ const Landing = () => {
                             />
                         </form>
                     </div>
-                    <div className={`${styles.decoration} col-2 col-sm-3 d-flex align-items-center btn-warning`}>
+                    <div className={`${styles.decoration} col-2 col-sm-3 d-flex align-items-center bg-warning`}>
                         <img className="d-none d-md-block" src="/images/landingone.webp" alt="landingone" />
                     </div>
                 </section>
@@ -53,9 +49,12 @@ const Landing = () => {
                 <div className="row">
                     {recipes.length >= 1 && recipes.map((item) => {
                         return (
-                            <RecipeCard key={item.id}
+                            <RecipeCard
+                                key={item.id}
                                 photo={item.image}
-                                nameproduct={item.title}
+                                title={item.title}
+                                // type='edit'
+                                path={() => router.push(`/recipe/${item.id}`)}
                             />
                         )
                     })}

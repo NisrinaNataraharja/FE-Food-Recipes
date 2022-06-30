@@ -1,13 +1,14 @@
-// import React, { useEffect, useState } from 'react'
-import styles from '../styles/landing.module.css'
-import RecipeCard from '../components/base/recipeCard/RecipeCard'
-import { Navbar } from '../components/index'
+import styles from '../../styles/landing.module.css'
+import {RecipeCard, Navbar} from '../../components/index'
 import axios from 'axios'
-// import { useRouter } from 'next/router'
+import { useRouter } from 'next/router'
 
-const Index = ({recipes}) => {
+const LandingStatic = ({recipes}) => {
     // const [recipes, setRecipes] = useState([])
-    // const router = useRouter()
+    const router = useRouter()
+    if (router.isFallback) {
+        return <h3>loading...</h3>;
+      }
     // useEffect(() => {
     //     axios
     //         .get(`${process.env.NEXT_APP_URL_API}recipe`)
@@ -53,8 +54,7 @@ const Index = ({recipes}) => {
                                 key={item.id}
                                 photo={item.image}
                                 title={item.title}
-                                // type='edit'
-                                path={() => router.push(`/recipe/${item.id}`)}
+                                path={() => router.push(`/static/${item.id}`)}
                             />
                         )
                     })}
@@ -63,13 +63,13 @@ const Index = ({recipes}) => {
         </>
     )
 }
-export async function getServerSideProps(context) {
-    const { data: RespData } = await axios.get(`${process.env.NEXT_APP_URL_API}recipe`);
-    console.log(RespData)
+export const getStaticProps = async () => {
+    const { data: RespData } = await axios.get(`${process.env.NEXT_APP_URL_API}recipe`)
     return {
       props: {
         recipes: RespData.data,
       },
     };
-  }
-export default Index
+  };
+
+export default LandingStatic

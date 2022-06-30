@@ -1,4 +1,4 @@
-footer .top {
+.top {
   height: 300px;
   display: flex;
   flex-direction: column;
@@ -7,23 +7,23 @@ footer .top {
   text-transform: capitalize;
 }
 
-footer .bottom {
+.bottom {
   height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-footer .bottom ul {
+.bottom ul {
   display: flex;
   list-style: none;
 }
 
-footer .bottom ul li {
+.bottom ul li {
   margin: 0 10px;
 }
 
-footer .bottom ul li a {
+.bottom ul li a {
   font-size: .8rem;
   text-decoration: none;
 }
