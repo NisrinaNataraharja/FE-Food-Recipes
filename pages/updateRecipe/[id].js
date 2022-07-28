@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styles from '../recipe/add.module.css'
+import styles from '../../styles/add.module.css'
 import { Navbar } from '../../components'
 import Router, { useRouter } from "next/router";
 import axios from "axios";
