@@ -24,7 +24,7 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault()
     axios
-      .post(`${process.env.NEXT_APP_URL_API}user/login`, formLogin)
+      .post(`${process.env.NEXT_APP_URL_API_HEROKU}user/login`, formLogin)
       .then((res) => {
         localStorage.setItem("token", res.data.data.token);
         localStorage.setItem("refreshToken", res.data.data.refreshToken);
