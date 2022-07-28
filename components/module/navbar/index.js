@@ -50,7 +50,7 @@ const Navbar = ({ className, ...props }) => {
                 </Link>
               </li>
               <li className={`${styles.li} me-5  mt-1`}>
-                <Link href="/recipe/addRecipe">
+                <Link href="/recipe/add/">
                   <p>Add recipe</p>
                 </Link>
               </li>

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import styles from './add.module.css'
-import { Navbar } from '../../components'
+import styles from '../../../styles/add.module.css'
+import { Navbar } from '../../../components'
 import Router from "next/router";
 import axios from "axios";
-import Footer from "../../components/module/footer";
+import Footer from "../../../components/module/footer";
 
 const AddRecipe = () => {
   const [ingredients, setIngredients] = useState("");
