@@ -20,7 +20,7 @@ const AddRecipe = () => {
     formData.append("image", image);
     formData.append("video", video);
     await axios
-      .post(`${process.env.NEXT_APP_URL_API_HEROKU}recipe`, formData, {
+      .post(`${process.env.NEXT_APP_URL_API_HEROKU}recipe/add`, formData, {
         headers: { Authorization: `Bearer ${token}` }
       }, {
         "content-type": "multipart/form-data",
