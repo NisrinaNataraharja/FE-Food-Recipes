@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from './add.module.css'
 import { Navbar } from '../../components'
 import Router from "next/router";
 import axios from "axios";
+import Footer from "../../components/module/footer";
 
 const AddRecipe = () => {
   const [ingredients, setIngredients] = useState("");
@@ -12,39 +13,48 @@ const AddRecipe = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const token = localStorage.getItem("token");
     const formData = new FormData();
     formData.append("ingredients", ingredients);
     formData.append("title", title);
     formData.append("image", image);
     formData.append("video", video);
     await axios
-      .post(`${process.env.NEXT_APP_URL_API}recipe`, formData, {withCredentials: true},{
+      .post(`${process.env.NEXT_APP_URL_API}recipe`, formData, {
+        headers: { Authorization: `Bearer ${token}` }
+      }, {
         "content-type": "multipart/form-data",
       })
       .then((res) => {
         console.log(res);
-        Router.push("/landing");
+        Router.push("/");
       })
       .catch((error) => {
         console.log(error);
       });
   };
-    const handleImage = (e) => {
-      const file = e.target.files[0];
-      setImage(file);
-    };
+  const handleImage = (e) => {
+    const file = e.target.files[0];
+    setImage(file);
+  };
   const handleVideo = (e) => {
-      const file = e.target.files[0];
-      setVideo(file);
+    const file = e.target.files[0];
+    setVideo(file);
   };
 
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    token
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
-    <div className="container mb-5">
-      <Navbar/>
+    <>
+      <div className="container mb-5">
+        <Navbar />
         <section className={styles.add}>
           <form onSubmit={handleSubmit} >
-          <div className="mb-3">
+            <div className="mb-3">
               <label htmlFor="photo" className="form-label me-2">
                 Photo
               </label>
@@ -54,6 +64,7 @@ const AddRecipe = () => {
                 id="photo"
                 placeholder="Photo"
                 onChange={(e) => handleImage(e)}
+                accept="image/*"
               />
             </div>
             <div className="mb-3">
@@ -108,16 +119,18 @@ const AddRecipe = () => {
               />
             </div>
             <div className="d-flex justify-content-center">
-                <button
-                  type="submit"
-                  className="btn btn-warning w-100 text-light mb-2"
-                >
-                  Simpan
-                </button>
+              <button
+                type="submit"
+                className="btn btn-warning w-100 text-light mb-5"
+              >
+                Simpan
+              </button>
             </div>
           </form>
         </section>
       </div>
+      <Footer />
+    </>
   )
 }
 

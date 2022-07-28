@@ -8,11 +8,30 @@ import RecipeCard from '../../components/base/recipeCard/RecipeCard'
 
 const UserProfile = () => {
   const [recipes, setRecipes] = useState([])
+  const [profile, setProfile] = useState({})
+  const search = (e) => {
+    e.preventDefault();
+  }
   useEffect(() => {
+    const token = localStorage.getItem("token");
     axios
-      .get(`${process.env.NEXT_APP_URL_API}recipe`, {withCredentials: true})
+      .get(`${process.env.NEXT_APP_URL_API}user/profile`, {
+        headers: { Authorization: `Bearer ${token}` }})
       .then((res) => {
-        // console.log(res.data.data[0]);
+        console.log(res);
+        setProfile(res.data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  }, [])
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    axios
+      .get(`${process.env.NEXT_APP_URL_API}recipe/userRecipe`, {
+        headers: { Authorization: `Bearer ${token}` }})
+      .then((res) => {
+        console.log(res);
         setRecipes(res.data.data);
       })
       .catch((err) => {
@@ -21,24 +40,38 @@ const UserProfile = () => {
   }, [])
 
   const deleteRecipe = async (id) => {
-    await axios.delete(`${process.env.NEXT_APP_URL_API}recipe/${id}`, {withCredentials: true});
-    alert("Delete success")
-    Router.push("/profile/userProfile")
+    const token = localStorage.getItem("token");
+    await axios.delete(`${process.env.NEXT_APP_URL_API}recipe/${id}`, {
+      headers: { Authorization: `Bearer ${token}` }})
+    .then((res) => {
+      alert("Delete success")
+      axios
+      .get(`${process.env.NEXT_APP_URL_API}recipe/userRecipe`, {
+        headers: { Authorization: `Bearer ${token}` }})
+      .then((res) => {
+        console.log(res);
+        setRecipes(res.data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+    
   }
-
     return (
       <>
         <Navbar />
         <main>
           <div className={style.profile}>
-            <img src="/images/levi1.jpg" alt="profile pic" />
+            <img src={profile.avatar? profile.avatar : "/images/levi1.jpg"} alt="profile pic" />
           </div>
-          <h2 style={{ margin: "40px auto", textAlign: 'center' }}>Levi Ackerman</h2>
+          <h2 style={{ margin: "40px auto", textAlign: 'center' }}>{profile.name}</h2>
           <div className={style.navigation}>
             <ul>
               <li >My Recipe</li>
-              <li >Saved Recipe</li>
-              <li >Liked Recipe</li>
             </ul>
             <div className={style.area}>
                     {recipes.length >= 1 && recipes.map((item) => {

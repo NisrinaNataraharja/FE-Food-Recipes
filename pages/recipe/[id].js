@@ -4,13 +4,17 @@ import { Navbar } from '../../components'
 import { useRouter } from 'next/router'
 import axios from 'axios'
 import ReactPlayer from 'react-player'
+import Footer from "../../components/module/footer";
 
 const Detail = () => {
     const router = useRouter()
     const { id } = router.query
     const [dataDetail, setDataDetail] = useState()
     const fetchDetail = async (id) => {
-        const result = await axios.get(`${process.env.NEXT_APP_URL_API}recipe/${id}`, {withCredentials: true})
+        const token = localStorage.getItem("token");
+        const result = await axios.get(`${process.env.NEXT_APP_URL_API}recipe/detail/${id}`, {
+            headers: { Authorization: `Bearer ${token}` }
+        })
         console.log(result);
         const data = result.data.data[0]
         setDataDetail(data)
@@ -18,7 +22,8 @@ const Detail = () => {
     }
     useEffect(() => {
         fetchDetail(id)
-    },[id])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
     return (
         <>
             <Navbar />
@@ -44,12 +49,13 @@ const Detail = () => {
                         <div className="video-step">
                             <h1 className="fs-2 mb-3">Video Step</h1>
                             <ReactPlayer url={dataDetail && dataDetail.video}
-                            controls={true}
+                                controls={true}
                             />
                         </div>
                     </section>
                 </div>
             </div>
+            <Footer />
         </>
     )
 }

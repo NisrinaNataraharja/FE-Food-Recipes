@@ -1,10 +1,21 @@
 .ul {
   display: flex;
+  list-style-type: none;
+  cursor: pointer;
 }
 .li {
   display: inline;
+  list-style-type: none;
 }
-
+.liAva{
+  display: flex;
+  justify-content: end;
+  list-style-type: none;
+}
+.dropdown{
+  display: flex;
+  justify-content: flex-end;
+}
 .dropdown_content {
   display: none;
   position: absolute;
@@ -25,7 +36,7 @@
 
 /* Change color of dropdown links on hover */
 .dropdown_content a:hover, .dropdown_content p:hover {
-  background-color: #ddd;
+  background-color: #fff;
 }
 
 /* Show the dropdown menu on hover */

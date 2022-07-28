@@ -1,9 +1,8 @@
 import style from './card.module.css'
-import Link from 'next/link'
+
 
 
 export default function RecipeCard({
-    id,
     key,
     title,
     photo,
@@ -16,7 +15,6 @@ export default function RecipeCard({
     return (
         <>
             <div className="col-sm-3 mb-4">
-                <Link href={`/recipe/${id}`}>
                     <div className={[["card"], style["cards"]].join(" ")} key={key} >
                         <div className={style["card-body"]} >
                             <div className={style["img-div"]}>
@@ -28,7 +26,6 @@ export default function RecipeCard({
                             </div>
                         </div>
                     </div>
-                </Link>
             </div>
         </>
     )

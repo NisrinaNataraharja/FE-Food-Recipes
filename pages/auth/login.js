@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import {useState} from 'react'
+import { useState } from 'react'
 import Router from "next/router";
 import styles from './auth.module.css'
 import Link from 'next/link'
@@ -24,8 +24,11 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault()
     axios
-      .post(`${process.env.NEXT_APP_URL_API}user/login`, formLogin, {withCredentials: true})
-      .then((res)=>{
+      .post(`${process.env.NEXT_APP_URL_API}user/login`, formLogin)
+      .then((res) => {
+        localStorage.setItem("token", res.data.data.token);
+        localStorage.setItem("refreshToken", res.data.data.refreshToken);
+        localStorage.setItem("id", res.data.data.id);
         Swal.fire({
           position: "center",
           icon: "success",
@@ -34,11 +37,11 @@ const Login = () => {
         });
         Router.push("/");
       })
-      .catch((err)=> {
+      .catch((err) => {
         console.log(err);
-        Swal.fire("", err.response.data.message, "error");     
-  })
-}
+        Swal.fire("", err.response.data.message, "error");
+      })
+  }
 
   return (
     <div className={styles.main}>
@@ -52,31 +55,31 @@ const Login = () => {
         <p className={styles["right-sub-title"]}>Log in into your existing account</p>
         <form onSubmit={(e) => handleLogin(e)}>
           <p className="mt-5 text-muted p-0 m-0">Email</p>
-          <Input css="inputAuth" 
-          type="email" 
-          placeholder="Email" 
-          name="email" 
-          required
-          value={formLogin.email}
-          onChange={(e) => handleChange(e)} 
+          <Input css="inputAuth"
+            type="email"
+            placeholder="Email"
+            name="email"
+            required
+            value={formLogin.email}
+            onChange={(e) => handleChange(e)}
           />
           <p className="mt-4 text-muted p-0 m-0">Password</p>
-          <Input css="inputAuth" 
-          type="password" 
-          placeholder="Password" 
-          name="password"
-          required
-          value={formLogin.password}
-          onChange={(e) => handleChange(e)} 
+          <Input css="inputAuth"
+            type="password"
+            placeholder="Password"
+            name="password"
+            required
+            value={formLogin.password}
+            onChange={(e) => handleChange(e)}
           />
           <p className="d-flex justify-content-end mt-3">Forgot password ?</p>
           <Button title="Login" btn="btn-auth" />
           <p className="d-flex justify-content-center mt-3">
             Don't have an account ?
             <Link href='/auth/register'>
-            <span className={styles["register-sub"]}>
-              &nbsp;Sign up
-            </span>
+              <span className={styles["register-sub"]}>
+                &nbsp;Sign up
+              </span>
             </Link>
           </p>
         </form>

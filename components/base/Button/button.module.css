@@ -51,10 +51,14 @@
 .btnAva {
   background-color: white;
   border: none;
+  display: flex;
+  justify-content: end;
 }
 
 .btnAva img {
-  border-radius: 50%;
+  width: 8%;
+  height: 8%;
+  border-radius: 100%;
   object-fit: cover;
 }
 
