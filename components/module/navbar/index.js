@@ -26,7 +26,7 @@ const Navbar = ({ className, ...props }) => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     axios
-      .get(`${process.env.NEXT_APP_URL_API}user/profile`, {
+      .get(`${process.env.NEXT_APP_URL_API_HEROKU}user/profile`, {
         headers: { Authorization: `Bearer ${token}` }
       })
       .then((res) => {
