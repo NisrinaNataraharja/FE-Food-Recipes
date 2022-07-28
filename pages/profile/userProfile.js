@@ -66,7 +66,7 @@ const UserProfile = () => {
         <Navbar />
         <main>
           <div className={style.profile}>
-            <img src={profile.avatar? profile.avatar : "/images/levi1.jpg"} alt="profile pic" />
+            <img src={profile.avatar? profile.avatar : "-"} alt="profile pic" />
           </div>
           <h2 style={{ margin: "40px auto", textAlign: 'center' }}>{profile.name}</h2>
           <div className={style.navigation}>
