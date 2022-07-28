@@ -37,7 +37,7 @@ const Register = () => {
         return
       }else{
       const res = await axios
-      .post(`${process.env.NEXT_APP_URL_API}user/register`, register)
+      .post(`${process.env.NEXT_APP_URL_API_HEROKU}user/register`, register)
       console.log(res.data.data);
       Swal.fire({
         position: "center",

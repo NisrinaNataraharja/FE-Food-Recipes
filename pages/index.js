@@ -11,7 +11,7 @@ const Landing = () => {
     const router = useRouter()
     useEffect(() => {
         axios
-            .get(`${process.env.NEXT_APP_URL_API}recipe`)
+            .get(`${process.env.NEXT_APP_URL_API_HEROKU}recipe`)
             .then((res) => {
                 // console.log(res.data.data[0]);
                 setRecipes(res.data.data);

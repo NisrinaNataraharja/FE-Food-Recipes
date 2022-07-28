@@ -13,7 +13,7 @@ const Landing = () => {
     const router = useRouter()
 
       const fetchSearch = async () => {
-        const result = await axios.get(`${process.env.NEXT_APP_URL_API}recipe?search=${router.query.keyword}`)
+        const result = await axios.get(`${process.env.NEXT_APP_URL_API_HEROKU}recipe?search=${router.query.keyword}`)
         setData(result.data)
         setRecipes(result.data.data)
         setSearch(router.query.keyword)
@@ -22,7 +22,7 @@ const Landing = () => {
     useEffect(() => {
         const fetch = async () => {
             try {
-                const result = await axios.get(`${process.env.NEXT_APP_URL_API}recipe?search=${router.query.keyword}`)
+                const result = await axios.get(`${process.env.NEXT_APP_URL_API_HEROKU}recipe?search=${router.query.keyword}`)
                 setData(result.data)
                 setRecipes(result.data.data)
                 setSearch(router.query.keyword)

@@ -21,7 +21,7 @@ const UpdateRecipe = () => {
         formData.append("video", video);
         const token = localStorage.getItem("token");
         await axios
-            .put(`${process.env.NEXT_APP_URL_API}recipe/${id}`, formData, {
+            .put(`${process.env.NEXT_APP_URL_API_HEROKU}recipe/${id}`, formData, {
                 headers: { Authorization: `Bearer ${token}` }}, {
                 "content-type": "multipart/form-data",
             })
@@ -43,7 +43,7 @@ const UpdateRecipe = () => {
     };
     const fetchdataDetail = async (id) => {
         const token = localStorage.getItem("token");
-        const result = await axios.get(`${process.env.NEXT_APP_URL_API}recipe/detail/${id}`, {
+        const result = await axios.get(`${process.env.NEXT_APP_URL_API_HEROKU}recipe/detail/${id}`, {
             headers: { Authorization: `Bearer ${token}` }})
         console.log(result.data.data);
         setTitle(result.data.data[0].title);

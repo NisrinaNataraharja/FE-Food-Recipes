@@ -15,7 +15,7 @@ const UserProfile = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     axios
-      .get(`${process.env.NEXT_APP_URL_API}user/profile`, {
+      .get(`${process.env.NEXT_APP_URL_API_HEROKU}user/profile`, {
         headers: { Authorization: `Bearer ${token}` }})
       .then((res) => {
         console.log(res);
@@ -28,7 +28,7 @@ const UserProfile = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     axios
-      .get(`${process.env.NEXT_APP_URL_API}recipe/userRecipe`, {
+      .get(`${process.env.NEXT_APP_URL_API_HEROKU}recipe/userRecipe`, {
         headers: { Authorization: `Bearer ${token}` }})
       .then((res) => {
         console.log(res);
@@ -41,12 +41,12 @@ const UserProfile = () => {
 
   const deleteRecipe = async (id) => {
     const token = localStorage.getItem("token");
-    await axios.delete(`${process.env.NEXT_APP_URL_API}recipe/${id}`, {
+    await axios.delete(`${process.env.NEXT_APP_URL_API_HEROKU}recipe/${id}`, {
       headers: { Authorization: `Bearer ${token}` }})
     .then((res) => {
       alert("Delete success")
       axios
-      .get(`${process.env.NEXT_APP_URL_API}recipe/userRecipe`, {
+      .get(`${process.env.NEXT_APP_URL_API_HEROKU}recipe/userRecipe`, {
         headers: { Authorization: `Bearer ${token}` }})
       .then((res) => {
         console.log(res);

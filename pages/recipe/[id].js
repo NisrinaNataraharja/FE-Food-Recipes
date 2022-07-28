@@ -12,7 +12,7 @@ const Detail = () => {
     const [dataDetail, setDataDetail] = useState()
     const fetchDetail = async (id) => {
         const token = localStorage.getItem("token");
-        const result = await axios.get(`${process.env.NEXT_APP_URL_API}recipe/detail/${id}`, {
+        const result = await axios.get(`${process.env.NEXT_APP_URL_API_HEROKU}recipe/detail/${id}`, {
             headers: { Authorization: `Bearer ${token}` }
         })
         console.log(result);
