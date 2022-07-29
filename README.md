@@ -45,7 +45,6 @@ npm install
     <img width="400" height="250" src="">
     <img width="400" height="250" src="">
     <img width="400" height="250" src="">
-    <img width="400" height="250" src="">
    
   </span>
 </p>
