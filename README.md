@@ -51,7 +51,7 @@ npm install
 
 ## ✍️ Authors
 
-- [](https://github.com/)
+- [@NisrinaNataraharja](https://github.com/NisrinaNataraharja)
 
 ## Link
 
