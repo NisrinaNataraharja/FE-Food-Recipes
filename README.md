@@ -18,13 +18,13 @@
 - Clone This Repo
 
 ```
-git clone https://github.com/
+git clone https://github.com/NisrinaNataraharja/FE-Food-Recipes.git
 ```
 
 - Go To Folder Repo
 
 ```
-cd 
+cd FE-Food-Recipes
 ```
 
 - Install Module
