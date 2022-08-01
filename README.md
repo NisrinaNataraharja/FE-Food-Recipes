@@ -1,7 +1,10 @@
+<br />
 <p align="center">
+
   <h3 align="center">Food Recipes</h3>
-  <img src="./public/images/screenshoot/logo.png"   alt="Food Recipe" border="0" />
-</p>
+  <p align="center">
+    <image align="center" width="100" src='./public/images/screenshoot/logo.png />
+  </p>
 
 ---
 
