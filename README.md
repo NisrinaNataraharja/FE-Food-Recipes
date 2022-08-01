@@ -3,7 +3,7 @@
 
   <h3 align="center">Food Recipes</h3>
   <p align="center">
-    <image align="center" width="100" src='./public/images/screenshoot/logo.png />
+    <image align="center" width="100" src='./public/images/screenshoot/logo.png' />
   </p>
 
 ---
