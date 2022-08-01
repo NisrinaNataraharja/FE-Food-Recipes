@@ -5,13 +5,15 @@
 ---
 
 ## ✏️ About
-
+Food Recipes is an application to help you cook delicious and simple meals. We offer recipes and cooking advice from anyone to everyone. Food Recipes is a web-based recipe sharing application that allow user to share their recipe. In this app, user could take a look into recipe including it's ingredients
 
 
 ## 🔖Build With
 
-- NextJS
-- Bootstrap
+- [Next Js](https://nextjs.org)
+- [Axios](https://www.npmjs.com/package/axios)
+- [Bootstrap](https://www.npmjs.com/package/bootstrap)
+- [Sweetalert](https://www.npmjs.com/package/sweetalert)
 
 ## 💻 How To Install?
 
@@ -55,5 +57,5 @@ npm install
 
 ## Link
 
-- [Backend](https://github.com/)
-- [Visit Project]()
+- [Backend](https://github.com/NisrinaNataraharja/BE-Food-Recipes)
+- [Visit Project](https://fe-food-recepies.vercel.app)
