@@ -39,17 +39,21 @@ npm install
 
 ## Screenshot
 
-<p align="center">
-  <span>
-    <img width="400" height="240" src="">   
-    <img width="400" height="240" src="">   
-    <img width="400" height="250" src=""> 
-    <img width="400" height="250" src="">
-    <img width="400" height="250" src="">
-    <img width="400" height="250" src="">
-   
-  </span>
-</p>
+| Login Page | Register Page |
+| ------------- | ------------- |
+| ![Login]( "Login Page") | ![Register]( "Register Page")|
+
+| Landing Page  | Recipe Detail Page |
+| ------------- | ------------- |
+| ![Landing]( "Landing Page") | ![Recipe Detail]( "Recipe Detail Page") |
+
+| Profile Page | Add Recipe Page |
+| ------------- | ------------- |
+| ![Profile]( "Profile Page") | ![Add Recipe]( "Add Recipe Page") |
+
+| Search Page | Video Page |
+| ------------- | ------------- |
+| ![Search Page]( "Search Page") | ![Video Tutorial]( "Video Page") |
 
 ## ✍️ Authors
 
