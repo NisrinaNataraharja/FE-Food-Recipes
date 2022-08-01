@@ -1,5 +1,5 @@
 <p align="center">
-  <img src=""   alt="Food Recipe" border="0" />
+  <img src="./public/images/screenshoot/logo.png"   alt="Food Recipe" border="0" />
 </p>
 
 ---
@@ -41,19 +41,16 @@ npm install
 
 | Login Page | Register Page |
 | ------------- | ------------- |
-| ![Login](/public/images/screenshoot/login.png?raw=true "Login Page") | ![Register]( "Register Page")|
+| ![Login](/public/images/screenshoot/login.png?raw=true "Login Page") | ![Register](/public/images/screenshoot/register.png?raw=true "Register Page")|
 
-| Landing Page  | Recipe Detail Page |
+| Home Page  | Search Page |
 | ------------- | ------------- |
-| ![Landing]( "Landing Page") | ![Recipe Detail]( "Recipe Detail Page") |
+| ![Landing](/public/images/screenshoot/Home%20Page.png?raw=true "Landing Page") | ![Search Page](/public/images/screenshoot/search.png?raw=true "Recipe Detail Page") |
 
 | Profile Page | Add Recipe Page |
 | ------------- | ------------- |
-| ![Profile]( "Profile Page") | ![Add Recipe]( "Add Recipe Page") |
+| ![Profile](/public/images/screenshoot/profile.png?raw=true "Profile Page") | ![Add Recipe](/public/images/screenshoot/add%20recipe.png?raw=true "Add Recipe Page") |
 
-| Search Page | Video Page |
-| ------------- | ------------- |
-| ![Search Page]( "Search Page") | ![Video Tutorial]( "Video Page") |
 
 ## ✍️ Authors
 
