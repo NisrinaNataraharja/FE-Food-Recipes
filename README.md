@@ -1,6 +1,9 @@
 <p align="center">
-  <img src=""   alt="Food Recipe" border="0" />
-</p>
+
+  <h3 align="center">Food Recipes</h3>
+  <p align="center">
+    <image align="center" width="100" src='./public/images/screenshoot/logo.png' />
+  </p>
 
 ---
 
@@ -41,19 +44,27 @@ npm install
 
 | Login Page | Register Page |
 | ------------- | ------------- |
-| ![Login]( "Login Page") | ![Register]( "Register Page")|
+| ![Login](/public/images/screenshoot/login.png?raw=true "Login Page") | ![Register](/public/images/screenshoot/register.png?raw=true "Register Page")|
 
-| Landing Page  | Recipe Detail Page |
+| Home Page  | Search Page |
 | ------------- | ------------- |
-| ![Landing]( "Landing Page") | ![Recipe Detail]( "Recipe Detail Page") |
+| ![Landing](/public/images/screenshoot/Home%20Page.png?raw=true "Landing Page") | ![Search Page](/public/images/screenshoot/search.png?raw=true "Recipe Detail Page") |
 
 | Profile Page | Add Recipe Page |
 | ------------- | ------------- |
-| ![Profile]( "Profile Page") | ![Add Recipe]( "Add Recipe Page") |
+| ![Profile](/public/images/screenshoot/profile.png?raw=true "Profile Page") | ![Add Recipe](/public/images/screenshoot/add%20recipe.png?raw=true "Add Recipe Page") |
 
-| Search Page | Video Page |
-| ------------- | ------------- |
-| ![Search Page]( "Search Page") | ![Video Tutorial]( "Video Page") |
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
 
 ## ✍️ Authors
 
